@@ -1,11 +1,13 @@
-export let liCreate = async (titles) => {
-    for(let el of titles){
-        const id = el.id;
+export let liCreate = async (all) => {
+    for (let el of all) {
+        let id = el.id;
 
-        const li = document.createElement("li");
-        const link = document.createElement("a");
+        let li = document.createElement("li");
+        let link = document.createElement('a');
         link.href = `post.html?id=${id}`;
         link.textContent = el.title;
+        li.classList.add("li");
+
         li.append(link);
         document.querySelector(".ul").append(li);
     }
